@@ -33,6 +33,7 @@ module.exports = {
           },
         },
         select: {
+          cursor: theme('cursor.pointer'),
           '&:focus': {
             iconColor: theme('colors.rose.500'),
           },
@@ -43,10 +44,6 @@ module.exports = {
         },
       },
       dark: {
-        'select, input': {
-          backgroundColor: theme('colors.gray.900'),
-          color: theme('colors.gray.100'),
-        },
         input: {
           '&::placeholder': {
             color: theme('colors.gray.300'),
