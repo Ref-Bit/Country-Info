@@ -1,5 +1,5 @@
 {
-  "name": "with-tailwindcss",
+  "name": "country-info",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,11 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "autoprefixer": "^10.0.4",
+    "human-readable-numbers": "^0.9.5",
     "next": "latest",
+    "postcss": "^8.1.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "autoprefixer": "^10.0.4",
-    "postcss": "^8.1.10",
+    "react-infinite-scroll-component": "^6.0.0",
     "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1"
   }
 }
