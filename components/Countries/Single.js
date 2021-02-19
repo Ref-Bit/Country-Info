@@ -6,7 +6,7 @@ export default function CountryPage({ country }) {
       <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
         <div className="lg:w-1/3 md:w-1/2 dark:bg-gray-800 dark:text-gray-100 bg-gray-100 text-gray-900 flex flex-col md:ml-auto w-full px-4 md:py-4 mt-4 md:mt-0 rounded-lg border-b-2 hover:border-b-4 border-rose-500 shadow-xl hover:shadow transition duration-300">
           <div>
-            <div className="text-4xl font-semibold">
+            <div className="text-2xl font-semibold">
               {country.name}
               {country.nativeName.localeCompare(country.name) === 0 ? null : (
                 <>
@@ -18,6 +18,12 @@ export default function CountryPage({ country }) {
             <div className="my-3">
               <img src={country?.flag} className="block w-64 rounded-lg" />
             </div>
+          </div>
+          <div className="my-3">
+            <h1 className="inline-block text-lg">Demonym:&nbsp;</h1>
+            <span className="text-rose-500 font-semibold">
+              {country.demonym}
+            </span>
           </div>
           <div className="my-3">
             <h1 className="inline-block text-lg">Area:&nbsp;</h1>
@@ -33,11 +39,7 @@ export default function CountryPage({ country }) {
                   .filter(border => border !== 'ISR')
                   .map((border, i) => (
                     <Link href={`/countries/borders/${border}`} key={i}>
-                      <a
-                        className={`${
-                          i === 0 ? 'text-left' : 'text-center'
-                        } text-rose-500 font-semibold`}
-                      >
+                      <a className="text-center text-rose-500 font-semibold">
                         {border}
                       </a>
                     </Link>
@@ -92,7 +94,7 @@ export default function CountryPage({ country }) {
             marginHeight="0"
             marginWidth="0"
             scrolling="no"
-            src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+            src={`https://maps.google.com/maps?width=100%&height=600&hl=en&q=${country.latlng[0]},${country.latlng[1]}&ie=UTF8&t=&z=5&iwloc=B&output=embed`}
           ></iframe>
           <div className="dark:bg-gray-800 bg-gray-50 relative left-4 flex flex-wrap py-6 rounded shadow-md w-2/3">
             <div className="lg:w-1/2 px-4">

@@ -15,7 +15,7 @@ body {
   overflow: hidden !important;
 }
 .scrollTop {
-  position: fixed; 
+  position: fixed;
   width: 50px;
   height: 50px;
   bottom: 20px;
@@ -29,7 +29,7 @@ body {
   opacity: 0.5;
 }
 
-.scrollTop:hover{
+.scrollTop:hover {
   opacity: 1;
 }
 
@@ -39,5 +39,177 @@ body {
   }
   100% {
     opacity: 0.5;
+  }
+}
+.changeColor {
+  fill: #4f86ed;
+}
+.cls-1 {
+  opacity: 0.3;
+}
+
+.cls-7 {
+  opacity: 0.8;
+}
+
+.cls-2 {
+  fill: #fff;
+}
+
+.cls-10,
+.cls-11,
+.cls-12,
+.cls-14,
+.cls-16,
+.cls-3 {
+  fill: none;
+}
+
+.cls-3 {
+  stroke: rgb(244, 63, 94);
+}
+
+.cls-10,
+.cls-11,
+.cls-12,
+.cls-3 {
+  stroke-miterlimit: 10;
+}
+
+.cls-14,
+.cls-15,
+.cls-16,
+.cls-3 {
+  stroke-width: 0.5px;
+}
+
+.cls-4 {
+  fill: #ffe1d9;
+}
+
+.cls-5 {
+  fill: #ffcfbf;
+}
+
+.cls-6 {
+  fill: #fecbb6;
+}
+
+.cls-9 {
+  fill: rgb(244, 63, 94);
+}
+
+.cls-10,
+.cls-12 {
+  stroke: #d26f51;
+}
+
+.cls-10,
+.cls-11 {
+  stroke-width: 0.38px;
+}
+
+.cls-11 {
+  stroke: #000;
+}
+
+.cls-12 {
+  stroke-width: 0.19px;
+}
+
+.cls-13 {
+  opacity: 0.45;
+}
+
+.cls-14,
+.cls-15,
+.cls-16 {
+  stroke: #b0bec5;
+  stroke-linejoin: round;
+}
+
+.cls-15 {
+  fill: #edf0f2;
+}
+
+.cls-16 {
+  stroke-linecap: round;
+}
+
+.cls-18 {
+  fill: #fffdbb;
+  opacity: 0.5;
+}
+
+/*---------------------------
+       SVG Animate
+---------------------------*/
+.earMove {
+  transition: all ease-in-out 2s;
+  transform-origin: 50% 50%;
+  animation: earmove 1.5s linear infinite alternate;
+}
+
+.faceMove {
+  transition: all ease-in-out 2s;
+  transform-origin: 50% 50%;
+  animation: move 1.5s linear infinite alternate;
+}
+
+.neckMove {
+  transition: all ease-in-out 2s;
+  transform-origin: 50% 50%;
+  animation: neck 1.5s linear infinite alternate;
+}
+
+@keyframes earmove {
+  0% {
+    transform: translateX(-0.3px) translateY(0.6px);
+  }
+  30% {
+    transform: translateX(-0.3px) translateY(0.6px);
+  }
+
+  60% {
+    transform: translateX(-0.7px) translateY(0px);
+  }
+
+  70% {
+    transform: translateX(-0.7px) translateY(-0.3px);
+  }
+  100% {
+    transform: translateX(-0.7px) translateY(-0.3px);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(-0.3px) translateY(0.6px);
+  }
+  30% {
+    transform: translateX(-0.3px) translateY(0.6px);
+  }
+
+  60% {
+    transform: translateX(2px) translateY(0px);
+  }
+
+  70% {
+    transform: translateX(2px) translateY(-0.3px);
+  }
+  100% {
+    transform: translateX(2px) translateY(-0.3px);
+  }
+}
+
+@keyframes neck {
+  0% {
+    transform: translateY(0.7px);
+  }
+  50% {
+    transform: translateY(0.7px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
