@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.0.4",
+    "framer-motion": "^3.6.1",
     "human-readable-numbers": "^0.9.5",
     "next": "latest",
     "postcss": "^8.1.10",
