@@ -57,7 +57,10 @@ export default function Countries({
           );
         }
         if (populationFilterTerm === 'low') {
-          filterBySearch = sortByLowestNum(filterBySearch, 'population').filter(country =>
+          filterBySearch = sortByLowestNum(
+            filterBySearch,
+            'population'
+          ).filter(country =>
             country.name.toLowerCase().startsWith(searchTerm?.toLowerCase())
           );
         }
@@ -98,7 +101,8 @@ export default function Countries({
       setCountries(filterByTerm);
       setHasMore(false);
     } else {
-      setCountries(data.slice(0, 6));
+      const _data = sortAlphabatically(data, 'name').slice(0, 6);
+      setCountries(_data);
       setHasMore(true);
     }
   }, [regionFilterTerm, populationFilterTerm, searchTerm]);
