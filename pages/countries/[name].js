@@ -20,7 +20,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async context => {
   const name = context.params.name;
-  const res = await fetch(`https://restcountries.eu/rest/v2/name/${name}`);
+  const res = await fetch(
+    encodeURI(`https://restcountries.eu/rest/v2/name/${name}`)
+  );
   const data = await res.json();
   const country = data[0];
 
