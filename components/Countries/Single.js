@@ -16,7 +16,7 @@ export default function CountryPage({ country }) {
               )}
             </div>
             <div className="my-3">
-              <img src={`https://flagcdn.com/${country.flag}.svg`} className="block w-64 rounded-lg" />
+              <img src={`https://flagcdn.com/${country.alpha2Code.toLowerCase()}.svg`} className="block w-64 rounded-lg" />
             </div>
           </div>
           <div className="my-3">
