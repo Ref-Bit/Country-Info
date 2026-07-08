@@ -16,7 +16,7 @@ export default function CountryPage({ country }) {
               )}
             </div>
             <div className="my-3">
-              <img src={country?.flag} className="block w-64 rounded-lg" />
+              <img src={country.flags.png} className="block w-64 rounded-lg" />
             </div>
           </div>
           <div className="my-3">

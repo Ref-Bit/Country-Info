@@ -30,7 +30,7 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`https://restcountries.eu/rest/v2/all`);
+  const res = await fetch('https://countries.dev/countries');
   const data = await res.json();
 
   if (!data) {

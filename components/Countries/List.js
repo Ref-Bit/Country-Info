@@ -136,7 +136,7 @@ export default function Countries({
                 <div className="xl:w-1/3 md:w-1/2 py-6 px-3" key={i}>
                   <div className="border-b-4 border-gray-300 hover:border-rose-500 p-4 dark:bg-gray-800 bg-gray-100 rounded-lg shadow-xl hover:shadow-sm transform -skew-y-2 hover:skew-y-0 transition duration-300">
                     <div className="relative -top-12 w-16 h-16 inline-flex items-center justify-center bg-rose-300 rounded-full">
-                      <img src={`https://flagcdn.com/${country.alpha2Code.toLowerCase()}.svg`} className="w-12 h-10 rounded" />
+                      <img src={country.flags.png} className="w-12 h-10 rounded" />
                     </div>
                     <div className="relative -top-4 font-semibold dark:text-gray-100 text-gray-900">
                       <h2 className="text-xl mb-2">{country.name}</h2>
