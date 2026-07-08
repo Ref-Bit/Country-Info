@@ -31,7 +31,7 @@ export default function CountryPage({ country }) {
               {country.area} m<sup>2</sup>
             </span>
           </div>
-          {country?.borders.length > 0 ? (
+          {country.borders && country.borders.length ? (
             <div className="my-3">
               <h1 className="text-lg">Borders:</h1>
               <div className="grid grid-cols-8 gap-2">
@@ -46,7 +46,7 @@ export default function CountryPage({ country }) {
                   ))}
               </div>
             </div>
-          ): null}
+          ) : null}
           <div className="my-3">
             <h1 className="inline-block text-lg">Dial Code:&nbsp;</h1>
             <span className="text-rose-500 font-semibold">
