@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { CountriesSingle } from '../../components';
-import { fetchAllCountries, fetchCountryByName } from '../../api/rest-countries'
 
 export const getStaticPaths = async () => {
-  const data = await fetchAllCountries();
+  const res = await fetch('https://countries.dev');
+  const data = await res.json();
   const paths = data.map(country => {
     return {
       params: {
@@ -20,7 +20,10 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async context => {
   const name = context.params.name;
-  const data = await fetchCountryByName(name)
+  const res = await fetch(
+    encodeURI(`https://countries.dev/name/${name}`)
+  );
+  const data = await res.json();
   const country = data[0];
 
   return {
