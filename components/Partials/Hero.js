@@ -10,8 +10,7 @@ export default function Hero({ setFilterTerm, setSearchTerm }) {
             <span className="text-rose-500">Country Info</span>
           </h1>
           <p className="shadow mb-8 leading-relaxed text-gray-900 bg-gray-100">
-            Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing
-            tousled.
+            Know more about your favorite country with in-depth information all in one place.
           </p>
         </div>
         <div id="filters" className="flex justify-center items-center">

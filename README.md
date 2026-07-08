@@ -1,6 +1,6 @@
 ## Country Info 🌐
-A web app to show country's info.
 
+Know more about your favorite country with in-depth information all in one place.
 ***
 
 #### Built With
