@@ -16,7 +16,7 @@ export default function CountryPage({ country }) {
               )}
             </div>
             <div className="my-3">
-              <img src={country.flags.png} className="block w-64 rounded-lg" />
+              <img src={`https://flagcdn.com/${country.flag.svg}`} className="block w-64 rounded-lg" />
             </div>
           </div>
           <div className="my-3">
@@ -89,7 +89,7 @@ export default function CountryPage({ country }) {
         </div>
 
         <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:ml-10 p-10 flex items-end justify-start shadow-xl hover:shadow transition duration-300 relative h-600">
-          {country.latng ? (
+          {country.latlng ? (
             <iframe
               width="100%"
               height="100%"
