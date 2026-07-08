@@ -21,8 +21,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async context => {
   const alpha3Code = context.params.alpha3Code;
   const res = await fetch(`https://countries.dev/alpha/${alpha3Code}`);
-  const data = await res.json();
-  const country = data[0];
+  const country = await res.json();
 
   return {
     props: { country },
