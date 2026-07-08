@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { fetchAllCountries } from '../api';
 import { Hero, CountriesList } from '../components';
 import { useState } from 'react';
 
@@ -30,8 +31,7 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch('https://countries.dev/countries');
-  const data = await res.json();
+  const data = await fetchAllCountries();
 
   if (!data) {
     return {

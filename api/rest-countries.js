@@ -5,18 +5,18 @@ const createClient = (baseUrl) => {
 
   return {
     get: async (path) => {
-      const res = await fetch(`${baseUrl}${path}`, { headers });
-      return res.json();
+      try {
+        const res = await fetch(`${baseUrl}${path}`, { headers });
+        // Check for HTTP errors (4xx, 5xx)
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return res.json();
+      } catch (error) {
+        console.error('Fetch failed:', JSON.stringify(error, null, 2));
+      }
     },
-    post: async (path, body) => {
-      const res = await fetch(`${baseUrl}${path}`, {
-        method: 'POST',
-        headers,
-        body: JSON.stringify(body),
-      });
-      return res.json();
-    }
-  };
+  }
 };
 
 const countriesApi = createClient(API_BASE_URL);

@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { CountriesSingle } from '../../components';
+import { fetchAllCountries, fetchCountryByName } from '../../api';
 
 export const getStaticPaths = async () => {
-  const res = await fetch('https://countries.dev/countries');
-  const data = await res.json();
+  const data = fetchAllCountries();
   const paths = data.map(country => {
     return {
       params: {
@@ -20,10 +20,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async context => {
   const name = context.params.name;
-  const res = await fetch(
-    encodeURI(`https://countries.dev/name/${name}`)
-  );
-  const data = await res.json();
+  const data = await fetchCountryByName(name);
   const country = data[0];
 
   return {
@@ -36,7 +33,7 @@ export default function Country({ country }) {
     <div>
       <Head>
         <title>Country Info | {country.name}</title>
-        <link rel="icon" href={country.flag} />
+        <link rel="icon" href={`https://flagcdn.com/${country.alpha2Code.toLowerCase()}.svg`} />
       </Head>
 
       <div className="min-h-screen">

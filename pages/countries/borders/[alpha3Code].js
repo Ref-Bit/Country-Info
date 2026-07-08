@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { CountriesSingle } from '../../../components';
+import { fetchAllCountries, fetchCountryByAlpha } from '../../../api';
 
 export const getStaticPaths = async () => {
-  const res = await fetch('https://countries.dev/countries');
-  const data = await res.json();
+  const data = await fetchAllCountries();
   const paths = data.map(country => {
     return {
       params: {
@@ -20,8 +20,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async context => {
   const alpha3Code = context.params.alpha3Code;
-  const res = await fetch(`https://countries.dev/alpha/${alpha3Code}`);
-  const country = await res.json();
+  const country = await fetchCountryByAlpha(alpha3Code);
 
   return {
     props: { country },
@@ -33,7 +32,7 @@ export default function BorderCountry({ country }) {
     <div>
       <Head>
         <title>Country Info | {country.name}</title>
-        <link rel="icon" href={country.flag} />
+        <link rel="icon" href={`https://flagcdn.com/${country.alpha2Code.toLowerCase()}.svg`}  />
       </Head>
 
       <div className="min-h-screen">
