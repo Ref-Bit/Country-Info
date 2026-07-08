@@ -111,9 +111,8 @@ export default function CountryPage({ country }) {
                 {country.languages.map((lang, i, arr) => (
                   <span
                     key={i}
-                    className={`${
-                      i === 0 ? '' : 'mx-1'
-                    } text-rose-500 font-semibold`}
+                    className={`${i === 0 ? '' : 'mx-1'
+                      } text-rose-500 font-semibold`}
                   >
                     {lang.name} {i < arr.length - 1 ? '-' : ''}
                   </span>
@@ -121,25 +120,12 @@ export default function CountryPage({ country }) {
               </p>
             </div>
             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
-              {country.regionalBlocs.length > 0 && (
-                <>
-                  <h2 className="title-font dark:text-white text-gray-900 tracking-widest text-xs">
-                    Regional Block
-                  </h2>
-                  <p className="text-rose-500 font-semibold leading-relaxed">
-                    {country.regionalBlocs.map((region, i, arr) => (
-                      <span
-                        key={i}
-                        className={`${
-                          i === 0 ? '' : 'mx-1'
-                        } text-rose-500 font-semibold`}
-                      >
-                        {region.name} {i < arr.length - 1 ? '-' : ''}
-                      </span>
-                    ))}
-                  </p>
-                </>
-              )}
+              <h2 className="title-font dark:text-white text-gray-900 tracking-widest text-xs">
+                Regional Block
+              </h2>
+              <p className="text-rose-500 font-semibold leading-relaxed">
+                {country.subregion}
+              </p>
               {country.capital && (
                 <>
                   <h2 className="title-font dark:text-white text-gray-900 tracking-widest text-xs mt-4">
