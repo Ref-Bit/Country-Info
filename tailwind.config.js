@@ -236,6 +236,9 @@ module.exports = {
         '"Noto Color Emoji"',
       ],
       serif: [
+        'Sora',
+        'Markazi Text',
+        'Ubuntu',
         'ui-serif',
         'Georgia',
         'Cambria',
