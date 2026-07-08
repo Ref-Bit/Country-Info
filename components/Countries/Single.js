@@ -89,17 +89,32 @@ export default function CountryPage({ country }) {
         </div>
 
         <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:ml-10 p-10 flex items-end justify-start shadow-xl hover:shadow transition duration-300 relative h-600">
-          <iframe
-            width="100%"
-            height="100%"
-            className="absolute inset-0 opacity-60"
-            frameBorder="0"
-            title="map"
-            marginHeight="0"
-            marginWidth="0"
-            scrolling="no"
-            src={`https://maps.google.com/maps?width=100%&height=600&hl=en&q=${country.latlng[0]},${country.latlng[1]}&ie=UTF8&t=&z=5&iwloc=B&output=embed`}
-          ></iframe>
+          {country.latng ? (
+            <iframe
+              width="100%"
+              height="100%"
+              className="absolute inset-0 opacity-60"
+              frameBorder="0"
+              title="map"
+              marginHeight="0"
+              marginWidth="0"
+              scrolling="no"
+              src={`https://maps.google.com/maps?width=100%&height=600&hl=en&q=${country.latlng[0]},${country.latlng[1]}&ie=UTF8&t=&z=5&iwloc=B&output=embed`}
+            ></iframe>
+          ) : (
+            <iframe
+              width="100%"
+              height="100%"
+              className="absolute inset-0 opacity-60"
+              frameBorder="0"
+              title="map"
+              marginHeight="0"
+              marginWidth="0"
+              scrolling="no"
+              src={`https://placehold.co/600x400?text=${country.name}`}
+            ></iframe>
+          )
+          }
           <div className="dark:bg-gray-800 bg-gray-50 relative left-4 flex flex-wrap py-6 rounded shadow-md w-2/3">
             <div className="lg:w-1/2 px-4">
               <h2 className="title-font dark:text-white text-gray-900 tracking-widest text-xs">
