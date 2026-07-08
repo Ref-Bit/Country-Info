@@ -25,12 +25,14 @@ export default function CountryPage({ country }) {
               {country.demonym}
             </span>
           </div>
-          <div className="my-3">
-            <h1 className="inline-block text-lg">Area:&nbsp;</h1>
-            <span className="text-rose-500 font-semibold">
-              {country.area} m<sup>2</sup>
-            </span>
-          </div>
+          {country.area ? (
+            <div className="my-3">
+              <h1 className="inline-block text-lg">Area:&nbsp;</h1>
+              <span className="text-rose-500 font-semibold">
+                {country.area} m<sup>2</sup>
+              </span>
+            </div>
+          ) : null}
           {country.borders && country.borders.length ? (
             <div className="my-3">
               <h1 className="text-lg">Borders:</h1>
@@ -53,35 +55,37 @@ export default function CountryPage({ country }) {
               {country.callingCodes[0]}
             </span>
           </div>
-          <div className="my-3">
-            <h1 className="text-lg">Currency Info:</h1>
-            <div>
-              {country.currencies.map((currency, i) => (
-                <ul key={i}>
-                  <li className="my-1 text-sm">
-                    Code:&nbsp;
-                    <span className="text-rose-500 font-semibold">
-                      {currency.code}
-                    </span>
-                  </li>
-                  <li className="my-1 text-sm">
-                    Name:&nbsp;
-                    <span className="text-rose-500 font-semibold">
-                      {currency.name}
-                    </span>
-                  </li>
-                  {currency.symbol && (
+          {country.currencies && country.currencies.length ? (
+            <div className="my-3">
+              <h1 className="text-lg">Currency Info:</h1>
+              <div>
+                {country.currencies.map((currency, i) => (
+                  <ul key={i}>
                     <li className="my-1 text-sm">
-                      Symbol:&nbsp;
+                      Code:&nbsp;
                       <span className="text-rose-500 font-semibold">
-                        {currency.symbol}
+                        {currency.code}
                       </span>
                     </li>
-                  )}
-                </ul>
-              ))}
+                    <li className="my-1 text-sm">
+                      Name:&nbsp;
+                      <span className="text-rose-500 font-semibold">
+                        {currency.name}
+                      </span>
+                    </li>
+                    {currency.symbol && (
+                      <li className="my-1 text-sm">
+                        Symbol:&nbsp;
+                        <span className="text-rose-500 font-semibold">
+                          {currency.symbol}
+                        </span>
+                      </li>
+                    )}
+                  </ul>
+                ))}
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
 
         <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:ml-10 p-10 flex items-end justify-start shadow-xl hover:shadow transition duration-300 relative h-600">
