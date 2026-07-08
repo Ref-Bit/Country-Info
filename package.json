@@ -19,6 +19,6 @@
     "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
-    "@tailwindcss/custom-forms": "^0.2.1"
+    "@tailwindcss/forms": "^0.2.1"
   }
 }
