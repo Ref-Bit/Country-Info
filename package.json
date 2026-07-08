@@ -11,7 +11,7 @@
     "autoprefixer": "^10.0.4",
     "framer-motion": "^3.6.1",
     "human-readable-numbers": "^0.9.5",
-    "next": "latest",
+    "next": "10.0.2",
     "postcss": "^8.1.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
