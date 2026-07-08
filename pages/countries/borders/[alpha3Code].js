@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { CountriesSingle } from '../../../components';
 
 export const getStaticPaths = async () => {
-  const res = await fetch('https://countries.dev');
+  const res = await fetch('https://countries.dev/countries');
   const data = await res.json();
   const paths = data.map(country => {
     return {
